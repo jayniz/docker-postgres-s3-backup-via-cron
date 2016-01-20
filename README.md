@@ -17,4 +17,4 @@ PGPASSWORD=
 
 # Thanks
 
-Adapted from https://blog.danivovich.com/2015/07/23/postgres-backups-to-s3-with-docker-and-systemd/
+Adapted from https://blog.danivovich.com/2015/07/23/postgres-backups-to-s3-with-docker-and-systemd/ and http://blog.oestrich.org/2015/01/pg-to-s3-backup-script/<Paste>
