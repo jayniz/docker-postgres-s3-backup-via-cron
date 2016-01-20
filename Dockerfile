@@ -14,8 +14,6 @@ RUN chmod 0644 /etc/cron.d/hello-cron
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
 
-RUN ln -s /.s3cfg /root/.s3cfg
-
 RUN mkdir /backup
 WORKDIR /backup
 COPY Gemfile /backup/Gemfile
