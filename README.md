@@ -14,3 +14,7 @@ PGPORT=
 PGUSER=
 PGPASSWORD=
 ```
+
+# Thanks
+
+Adapted from https://blog.danivovich.com/2015/07/23/postgres-backups-to-s3-with-docker-and-systemd/
