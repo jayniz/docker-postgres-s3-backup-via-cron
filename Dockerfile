@@ -1,8 +1,8 @@
-FROM ubuntu:latest
+FROM sameersbn/postgresql:9.4-11
 MAINTAINER jannis@gmail.com
 
 RUN apt-get update -y
-RUN apt-get install -y postgresql-client ruby ruby-dev build-essential libxml2-dev libxslt-dev liblzma-dev zlib1g-dev patch
+RUN apt-get install -y postgresql-client-9.4 ruby ruby-dev build-essential libxml2-dev libxslt-dev liblzma-dev zlib1g-dev patch
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/hello-cron
