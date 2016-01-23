@@ -11,7 +11,7 @@ filename = "#{project_name}.#{time}.sql.dump"
 filepath = "/tmp/#{filename}"
 
 # Move the backup file from docker run
-FileUtils.mv('/tmp/backup.sql.dump', filepath)
+FileUtils.mv('/tmp/backup.sql.dump.bz2', filepath)
 
 # verify file exists and file size is > 0 bytes
 unless File.exists?(filepath) && File.new(filepath).size > 0

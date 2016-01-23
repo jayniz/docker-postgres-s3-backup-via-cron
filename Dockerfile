@@ -4,12 +4,9 @@ MAINTAINER jannis@gmail.com
 RUN apt-get update -y
 RUN apt-get install -y postgresql-client-9.4 ruby ruby-dev build-essential libxml2-dev libxslt-dev liblzma-dev zlib1g-dev patch
 
-# Add crontab file in the cron directory
-ADD crontab /etc/cron.d/hello-cron
+# Add cron job
 
-
-# Give execution rights on the cron job
-RUN chmod 0644 /etc/cron.d/hello-cron
+RUN (crontab -l; echo "0 * * * * /backup/backup.sh" ) | crontab
 
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
@@ -29,4 +26,4 @@ COPY backup.rb /backup/s3upload.rb
 RUN chmod 0700 /backup/s3upload.rb
 
 # Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
+ENTRYPOINT cron && tail -f /var/log/cron.log

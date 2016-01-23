@@ -1,3 +1,4 @@
 #!/bin/bash
-pg_dumpall -f /tmp/backup.sql.dump
+rm -f /tmp/backup.sql.dump.bz2
+pg_dumpall | bzip2 > /tmp/backup.sql.dump.bz2
 /backup/s3upload.rb

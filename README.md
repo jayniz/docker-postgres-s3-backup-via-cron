@@ -1,5 +1,10 @@
 # Docker Postgres backup to Amazon S3 via cron
 
+This image dumps your postgres databases very hour,
+compresses the dump using bz2 and uploads it to an
+amazon S3 bucket. Backups older than 30 days are
+deleted automatically.
+
 Configure the backup source and s3 target with these environment
 variables:
 
@@ -17,4 +22,4 @@ PGPASSWORD=
 
 # Thanks
 
-Adapted from https://blog.danivovich.com/2015/07/23/postgres-backups-to-s3-with-docker-and-systemd/ and http://blog.oestrich.org/2015/01/pg-to-s3-backup-script/<Paste>
+Adapted from https://blog.danivovich.com/2015/07/23/postgres-backups-to-s3-with-docker-and-systemd/ and http://blog.oestrich.org/2015/01/pg-to-s3-backup-script/
