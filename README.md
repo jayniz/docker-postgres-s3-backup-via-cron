@@ -63,4 +63,4 @@ things. Just send that PR over (or a message) and we'll figure it out together. 
 
 ## Thanks
 
-Adapted from https://blog.danivovich.com/2015/07/23/postgres-backups-to-s3-with-docker-and-systemd/ and http://blog.oestrich.org/2015/01/pg-to-s3-backup-script/
+Adapted from [here](https://blog.danivovich.com/2015/07/23/postgres-backups-to-s3-with-docker-and-systemd/), [here](http://blog.oestrich.org/2015/01/pg-to-s3-backup-script/) and [here](https://www.ekito.fr/people/run-a-cron-job-with-docker/].
