@@ -24,6 +24,8 @@ RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install
 
 
 # Copy scripts
+COPY run_cron.sh /backup/run_cron.sh
+RUN chmod 0700 /backup/run_cron.sh
 COPY backup.sh /backup/backup.sh
 RUN chmod 0700 /backup/backup.sh
 COPY s3upload.rb /backup/s3upload.rb
@@ -36,4 +38,4 @@ ADD crontab /etc/cron.d/backup-cron
 RUN chmod 0644 /etc/cron.d/backup-cron
 
 # Run the command on container startup
-ENTRYPOINT cron && tail -f /var/log/cron.log
+ENTRYPOINT /backup/run_cron.sh
