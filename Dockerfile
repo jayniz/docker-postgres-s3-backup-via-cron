@@ -27,7 +27,7 @@ RUN bundle config build.nokogiri --use-system-libraries=true --with-xml2-include
 RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install
 COPY backup.sh /backup/backup.sh
 RUN chmod 0700 /backup/backup.sh
-COPY backup.rb /backup/s3upload.rb
+COPY s3upload.rb /backup/s3upload.rb
 RUN chmod 0700 /backup/s3upload.rb
 
 # Run the command on container startup

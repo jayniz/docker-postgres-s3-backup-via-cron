@@ -7,7 +7,7 @@ bucket_name = ENV['AWS_BUCKET_NAME']
 project_name = ENV['BACKUP_NAME']
 
 time = Time.now.strftime("%Y-%m-%d-%H-%M-%S")
-filename = "#{project_name}.#{time}.sql.dump"
+filename = "#{project_name}.#{time}.sql.dump.bz2"
 filepath = "/tmp/#{filename}"
 
 # Move the backup file from docker run
