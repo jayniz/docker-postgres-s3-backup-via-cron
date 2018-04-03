@@ -12,6 +12,7 @@ variables:
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
 - `AWS_BUCKET_NAME`
+- `BACKUP_CMD` (for example `pg_dumpall` or `pg_dump mydb`)
 - `BACKUP_NAME`
 - `PGHOST`
 - `PGPORT`

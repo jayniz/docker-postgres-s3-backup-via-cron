@@ -12,7 +12,7 @@ rm -f /tmp/backup.sql.dump.bz2
 # echo "  - PGUSER=${PGUSER}"
 # echo "  - PGPASSWORD=${PGPASSWORD}"
 echo "`date` Creating postgres dump"
-pg_dumpall | bzip2 > /tmp/backup.sql.dump.bz2
+${BACKUP_CMD:-pg_dumpall} | bzip2 > /tmp/backup.sql.dump.bz2
 echo "`date` Uploading to S3"
 /backup/s3upload.rb
 echo "`date` Done!"
